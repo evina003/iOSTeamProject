@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainMenuViewController : UIViewController
+@interface MainMenuViewController : UIViewController <UIAlertViewDelegate>
 {
     NSManagedObjectContext *context;
 }
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UILabel *resInfo;
+
+- (IBAction)pressCancel:(id)sender;
+
 @end
+
