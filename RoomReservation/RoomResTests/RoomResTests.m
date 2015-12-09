@@ -1,19 +1,19 @@
 //
-//  RoomReservationTests.m
-//  RoomReservationTests
+//  RoomResTests.m
+//  RoomResTests
 //
-//  Created by Wilfredo G Gomez on 11/23/15.
-//  Copyright (c) 2015 Florida International University. All rights reserved.
+//  Created by giselle pacheco on 12/6/15.
+//  Copyright (c) 2015 classroomM. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface RoomReservationTests : XCTestCase
+@interface RoomResTests : XCTestCase
 
 @end
 
-@implementation RoomReservationTests
+@implementation RoomResTests
 
 - (void)setUp {
     [super setUp];

@@ -1,9 +1,9 @@
 //
 //  main.m
-//  RoomReservation
+//  RoomRes
 //
-//  Created by Wilfredo G Gomez on 11/23/15.
-//  Copyright (c) 2015 Florida International University. All rights reserved.
+//  Created by giselle pacheco on 12/6/15.
+//  Copyright (c) 2015 classroomM. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
