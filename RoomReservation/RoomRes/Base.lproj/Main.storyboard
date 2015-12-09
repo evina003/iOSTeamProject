@@ -91,7 +91,7 @@
                     <navigationItem key="navigationItem" id="W5u-nO-nNg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="amz-em-6E7" kind="push" id="oW8-rc-h4e"/>
+                        <segue destination="amz-em-6E7" kind="push" id="xmh-40-gwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYI-8O-Zuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,16 +102,27 @@
         <scene sceneID="tIj-xJ-Czr">
             <objects>
                 <viewController id="amz-em-6E7" customClass="RoomPickerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hD4-RO-LfR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <navigationItem key="navigationItem" id="tMn-5w-yAt"/>
+                    <connections>
+                        <segue destination="n2z-VI-3Mb" kind="push" id="l78-49-jab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNU-ux-IJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="1150"/>
+        </scene>
+        <!--Time Picker View Controller-->
+        <scene sceneID="rra-Wd-0Ny">
+            <objects>
+                <viewController id="n2z-VI-3Mb" customClass="TimePickerViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mbZ-ZY-1eA"/>
+                    <connections>
+                        <segue destination="sQx-y3-fFU" kind="push" id="Dd2-5Y-2TB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpr-4A-B60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="1150"/>
         </scene>
         <!--My Reservations-->
         <scene sceneID="9rp-f5-YDH">
@@ -166,6 +177,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ma-0r-EbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="1160"/>
+        </scene>
+        <!--Reason Picker View Controller-->
+        <scene sceneID="vvG-uV-xhg">
+            <objects>
+                <viewController id="sQx-y3-fFU" customClass="ReasonPickerViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BeR-t3-DpA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dT2-lz-hnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="1150"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

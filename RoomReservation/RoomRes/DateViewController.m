@@ -35,8 +35,19 @@
 */
 
 - (IBAction)todayPressed:(UIButton *)sender {
+    
+    RoomPickerViewController *rView = [[RoomPickerViewController alloc] init];
+    
+    
+    [self.navigationController pushViewController:rView
+                                         animated:YES];
 }
 
 - (IBAction)tomorrowPressed:(UIButton *)sender {
+    
+    RoomPickerViewController *rView = [[RoomPickerViewController alloc] init];
+
+    [self.navigationController pushViewController:rView animated:YES];
+    
 }
 @end

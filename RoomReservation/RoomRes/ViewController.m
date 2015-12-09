@@ -7,9 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <CoreData/CoreData.h>
-#import <LocalAuthentication/LocalAuthentication.h>
-#import "AppDelegate.h"
 
 @implementation ViewController
 
@@ -22,17 +19,30 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
     
+    
+    
+    if()
+    
     NSManagedObject *giselle = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     
     NSManagedObject *manny = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
-    
-    NSLog(@"hello");
     
     [giselle setValue:@"gpach002" forKey:@"username"];
     [giselle setValue:@"iLoveJessicaJones" forKey:@"password"];
     
     [manny setValue:@"evinas003" forKey:@"username"];
     [manny setValue:@"iLoveSM" forKey:@"password"];
+    
+    
+    
+    for(int i = 0 ; i < 10; i++)
+    {
+        Room *x =  [NSEntityDescription insertNewObjectForEntityForName: @"Room" inManagedObjectContext: context];
+        
+        x.roomNum = [NSString stringWithFormat:@"%d", i*5];
+        x.cap = [NSNumber numberWithInt: (i != 0)? 2 : i * 2];
+    }
+    
     
     NSError *err = nil;
     
@@ -157,11 +167,21 @@
     }
     
 }
--(IBAction)pressLoad: (id)sender
-{
-
-
+- (BOOL)coreDataHasEntriesForEntityName:(NSString *)entityName {
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    [request setFetchLimit:1];
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (!results) {
+        LogError(@"Fetch error: %@", error);
+        abort();
+    }
+    if ([results count] == 0) {
+        return NO;
+    }
+    return YES;
 }
-
 
 @end

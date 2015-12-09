@@ -2,7 +2,7 @@
 //  RoomPickerViewController.m
 //  RoomRes
 //
-//  Created by giselle pacheco on 12/9/15.
+//  Created by emmanuel vinas on 12/9/15.
 //  Copyright (c) 2015 classroomM. All rights reserved.
 //
 
@@ -14,9 +14,29 @@
 
 @implementation RoomPickerViewController
 
+@synthesize rooms,roomTableView, selectedRoom;
+
+-(void)populateArray
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+
+    NSFetchRequest *rq = [[NSFetchRequest alloc] init];
+    NSEntityDescription *desc = [NSEntityDescription entityForName:@"Room" inManagedObjectContext:context];
+    [rq setEntity:desc];
+    [rq setResultType: NSDictionaryResultType];
+    [rq setPropertiesToFetch:@[@"roomNum"]];
+    NSError *err;
+    
+    rooms = [context executeFetchRequest:rq error:&err];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self populateArray];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +53,55 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark Table View Data Source Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return [rooms count];
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+
+// provide the name to assign to requested cell
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = [indexPath row];
+    
+    static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                             SectionsTableIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                 initWithStyle:UITableViewCellStyleDefault
+                 reuseIdentifier:SectionsTableIdentifier];
+    }
+    
+    Room *room = [rooms objectAtIndex:row];
+    NSString *roomNumber = [NSString stringWithFormat:@"%@", room.roomNum];
+    cell.textLabel.text = roomNumber;
+    return cell;
+}
+
+// Provide the title to use for the requested section
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section {
+    NSString *key = @"";
+    return key;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = [indexPath row];
+    selectedRoom = [rooms objectAtIndex:row];
+    
+}
+
 
 @end

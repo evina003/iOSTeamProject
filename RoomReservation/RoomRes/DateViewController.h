@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomPickerViewController.h"
 
 @interface DateViewController : UIViewController
 

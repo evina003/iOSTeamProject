@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreData/CoreData.h>
+#import <LocalAuthentication/LocalAuthentication.h>
+#import "AppDelegate.h"
+#import "Room.h"
 @interface ViewController : UIViewController
 {
     NSManagedObjectContext *context;

@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A53D6981C18D055008EA182 /* RoomPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53D6961C18D055008EA182 /* RoomPickerViewController.m */; };
+		5A53D6991C18D055008EA182 /* RoomPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A53D6971C18D055008EA182 /* RoomPickerViewController.xib */; };
+		5A53D69D1C18D4B9008EA182 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53D69C1C18D4B9008EA182 /* Reservation.m */; };
+		5A53D6A01C18D4B9008EA182 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53D69F1C18D4B9008EA182 /* Room.m */; };
+		5A53D6A31C18D4BA008EA182 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53D6A21C18D4BA008EA182 /* Users.m */; };
+		5AEF49611C18CD62003F0F73 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF495F1C18CD62003F0F73 /* TimePickerViewController.m */; };
+		5AEF49621C18CD62003F0F73 /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF49601C18CD62003F0F73 /* TimePickerViewController.xib */; };
+		5AEF49661C18CDC2003F0F73 /* ReasonPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49641C18CDC2003F0F73 /* ReasonPickerViewController.m */; };
+		5AEF49671C18CDC2003F0F73 /* ReasonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF49651C18CDC2003F0F73 /* ReasonPickerViewController.xib */; };
 		C43C0CC51C18A94800BC3265 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */; };
 		C43C0CC81C18C0F500BC3265 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43C0CC71C18C0F500BC3265 /* DateViewController.m */; };
-		C43C0CCB1C18C28E00BC3265 /* RoomPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43C0CCA1C18C28E00BC3265 /* RoomPickerViewController.m */; };
 		C4CEF7A31C14B4A800376760 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A21C14B4A800376760 /* main.m */; };
 		C4CEF7A61C14B4A800376760 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A51C14B4A800376760 /* AppDelegate.m */; };
 		C4CEF7A91C14B4A900376760 /* RoomRes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A71C14B4A900376760 /* RoomRes.xcdatamodeld */; };
@@ -19,7 +27,6 @@
 		C4CEF7B41C14B4A900376760 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CEF7B21C14B4A900376760 /* LaunchScreen.xib */; };
 		C4CEF7C01C14B4A900376760 /* RoomResTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7BF1C14B4A900376760 /* RoomResTests.m */; };
 		C4CEF7CA1C14D49500376760 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CEF7C91C14D49500376760 /* CoreData.framework */; };
-		C4CEF7CF1C14FEC400376760 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7CE1C14FEC400376760 /* Users.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,12 +40,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A53D6951C18D055008EA182 /* RoomPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomPickerViewController.h; sourceTree = "<group>"; };
+		5A53D6961C18D055008EA182 /* RoomPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomPickerViewController.m; sourceTree = "<group>"; };
+		5A53D6971C18D055008EA182 /* RoomPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomPickerViewController.xib; sourceTree = "<group>"; };
+		5A53D69B1C18D4B9008EA182 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		5A53D69C1C18D4B9008EA182 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		5A53D69E1C18D4B9008EA182 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		5A53D69F1C18D4B9008EA182 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		5A53D6A11C18D4BA008EA182 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		5A53D6A21C18D4BA008EA182 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		5AEF495E1C18CD62003F0F73 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
+		5AEF495F1C18CD62003F0F73 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		5AEF49601C18CD62003F0F73 /* TimePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
+		5AEF49631C18CDC2003F0F73 /* ReasonPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReasonPickerViewController.h; sourceTree = "<group>"; };
+		5AEF49641C18CDC2003F0F73 /* ReasonPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReasonPickerViewController.m; sourceTree = "<group>"; };
+		5AEF49651C18CDC2003F0F73 /* ReasonPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReasonPickerViewController.xib; sourceTree = "<group>"; };
 		C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		C43C0CC61C18C0F500BC3265 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		C43C0CC71C18C0F500BC3265 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
-		C43C0CC91C18C28E00BC3265 /* RoomPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomPickerViewController.h; sourceTree = "<group>"; };
-		C43C0CCA1C18C28E00BC3265 /* RoomPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomPickerViewController.m; sourceTree = "<group>"; };
 		C4CEF79D1C14B4A800376760 /* RoomRes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomRes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CEF7A11C14B4A800376760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CEF7A21C14B4A800376760 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,8 +74,6 @@
 		C4CEF7BE1C14B4A900376760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CEF7BF1C14B4A900376760 /* RoomResTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomResTests.m; sourceTree = "<group>"; };
 		C4CEF7C91C14D49500376760 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C4CEF7CD1C14FEC400376760 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
-		C4CEF7CE1C14FEC400376760 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A53D69A1C18D3B6008EA182 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5A53D6A11C18D4BA008EA182 /* Users.h */,
+				5A53D6A21C18D4BA008EA182 /* Users.m */,
+				5A53D69E1C18D4B9008EA182 /* Room.h */,
+				5A53D69F1C18D4B9008EA182 /* Room.m */,
+				5A53D69B1C18D4B9008EA182 /* Reservation.h */,
+				5A53D69C1C18D4B9008EA182 /* Reservation.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		5AEF495D1C18CBE1003F0F73 /* Emmanuel's Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				C43C0CC61C18C0F500BC3265 /* DateViewController.h */,
+				C43C0CC71C18C0F500BC3265 /* DateViewController.m */,
+				5AEF495E1C18CD62003F0F73 /* TimePickerViewController.h */,
+				5AEF495F1C18CD62003F0F73 /* TimePickerViewController.m */,
+				5AEF49601C18CD62003F0F73 /* TimePickerViewController.xib */,
+				5AEF49631C18CDC2003F0F73 /* ReasonPickerViewController.h */,
+				5AEF49641C18CDC2003F0F73 /* ReasonPickerViewController.m */,
+				5AEF49651C18CDC2003F0F73 /* ReasonPickerViewController.xib */,
+				5A53D6951C18D055008EA182 /* RoomPickerViewController.h */,
+				5A53D6961C18D055008EA182 /* RoomPickerViewController.m */,
+				5A53D6971C18D055008EA182 /* RoomPickerViewController.xib */,
+			);
+			name = "Emmanuel's Scripts";
+			sourceTree = "<group>";
+		};
 		C4CEF7941C14B4A800376760 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +150,8 @@
 		C4CEF79F1C14B4A800376760 /* RoomRes */ = {
 			isa = PBXGroup;
 			children = (
+				5A53D69A1C18D3B6008EA182 /* Entities */,
+				5AEF495D1C18CBE1003F0F73 /* Emmanuel's Scripts */,
 				C4CEF7A41C14B4A800376760 /* AppDelegate.h */,
 				C4CEF7A51C14B4A800376760 /* AppDelegate.m */,
 				C4CEF7AA1C14B4A900376760 /* ViewController.h */,
@@ -109,13 +160,7 @@
 				C4CEF7B01C14B4A900376760 /* Images.xcassets */,
 				C4CEF7B21C14B4A900376760 /* LaunchScreen.xib */,
 				C4CEF7A71C14B4A900376760 /* RoomRes.xcdatamodeld */,
-				C4CEF7CD1C14FEC400376760 /* Users.h */,
-				C4CEF7CE1C14FEC400376760 /* Users.m */,
 				C4CEF7A01C14B4A800376760 /* Supporting Files */,
-				C43C0CC61C18C0F500BC3265 /* DateViewController.h */,
-				C43C0CC71C18C0F500BC3265 /* DateViewController.m */,
-				C43C0CC91C18C28E00BC3265 /* RoomPickerViewController.h */,
-				C43C0CCA1C18C28E00BC3265 /* RoomPickerViewController.m */,
 			);
 			path = RoomRes;
 			sourceTree = "<group>";
@@ -227,6 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CEF7AF1C14B4A900376760 /* Main.storyboard in Resources */,
+				5A53D6991C18D055008EA182 /* RoomPickerViewController.xib in Resources */,
+				5AEF49671C18CDC2003F0F73 /* ReasonPickerViewController.xib in Resources */,
+				5AEF49621C18CD62003F0F73 /* TimePickerViewController.xib in Resources */,
 				C4CEF7B41C14B4A900376760 /* LaunchScreen.xib in Resources */,
 				C4CEF7B11C14B4A900376760 /* Images.xcassets in Resources */,
 			);
@@ -246,14 +294,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A53D6A31C18D4BA008EA182 /* Users.m in Sources */,
+				5A53D6A01C18D4B9008EA182 /* Room.m in Sources */,
 				C4CEF7A61C14B4A800376760 /* AppDelegate.m in Sources */,
-				C4CEF7CF1C14FEC400376760 /* Users.m in Sources */,
+				5AEF49661C18CDC2003F0F73 /* ReasonPickerViewController.m in Sources */,
 				C4CEF7A31C14B4A800376760 /* main.m in Sources */,
+				5AEF49611C18CD62003F0F73 /* TimePickerViewController.m in Sources */,
+				5A53D6981C18D055008EA182 /* RoomPickerViewController.m in Sources */,
 				C4CEF7AC1C14B4A900376760 /* ViewController.m in Sources */,
+				5A53D69D1C18D4B9008EA182 /* Reservation.m in Sources */,
 				C43C0CC51C18A94800BC3265 /* MainMenuViewController.m in Sources */,
 				C4CEF7A91C14B4A900376760 /* RoomRes.xcdatamodeld in Sources */,
 				C43C0CC81C18C0F500BC3265 /* DateViewController.m in Sources */,
-				C43C0CCB1C18C28E00BC3265 /* RoomPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
