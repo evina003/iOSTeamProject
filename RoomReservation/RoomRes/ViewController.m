@@ -19,7 +19,7 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
     
-    
+  /*
     
     if()
     
@@ -58,6 +58,7 @@
     
     NSLog(@"%@", manny);
     NSLog(@"object saved");
+   */
 }
 
 /*
@@ -167,8 +168,9 @@
     }
     
 }
+/*
 - (BOOL)coreDataHasEntriesForEntityName:(NSString *)entityName {
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init] ;
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
     [request setFetchLimit:1];
@@ -183,5 +185,5 @@
     }
     return YES;
 }
-
+*/
 @end
