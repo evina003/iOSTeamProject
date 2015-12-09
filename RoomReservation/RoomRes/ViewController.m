@@ -18,11 +18,7 @@
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
-    
-  /*
-    
-    if()
-    
+        
     NSManagedObject *giselle = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     
     NSManagedObject *manny = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
@@ -58,7 +54,7 @@
     
     NSLog(@"%@", manny);
     NSLog(@"object saved");
-   */
+   
 }
 
 /*
@@ -121,8 +117,9 @@
             // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
         });
     }
-}
-*/
+ */
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
