@@ -16,6 +16,12 @@
 
 @synthesize rooms,roomTableView, selectedRoom;
 
+
+-(void)enableSearch
+{
+}
+
+
 -(void)populateArray
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -36,7 +42,14 @@
     [super viewDidLoad];
     
     [self populateArray];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Search"
+                                  style:UIBarButtonItemStyleDone
+                                  target:self
+                                  action:@selector(enableSearch)];
+    
+    self.navigationItem.rightBarButtonItem = newButton;
 }
 
 - (void)didReceiveMemoryWarning {

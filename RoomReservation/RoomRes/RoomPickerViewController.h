@@ -19,4 +19,5 @@
 @property (nonatomic, retain) NSArray *rooms;
 @property (nonatomic, retain) Room *selectedRoom;
 -(void) populateArray;
+-(void)enableSearch;
 @end
