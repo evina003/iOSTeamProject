@@ -24,7 +24,6 @@
     NSError *err;
     
     rooms = [context executeFetchRequest:rq error:&err];
-    //searResults = [context executeFetchRequest:rq error:&err];
     
     searchBar.frame = CGRectMake(0 , self.navigationController.navigationBar.frame.origin.y + searchBar.frame.size.height, 320, 44);
     searchBar.delegate = self;
@@ -90,8 +89,6 @@
     }
     
     
-    //NSString *roomNumber = [NSString stringWithFormat:@"%@", [[searResults objectAtIndex:row] objectForKey:@"roomNum"]];
-    //cell.textLabel.text = roomNumber;
     NSString *roomNumber;
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
