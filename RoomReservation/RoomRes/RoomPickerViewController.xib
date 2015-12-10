@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomPickerViewController">
             <connections>
                 <outlet property="roomTableView" destination="ysm-xY-KX7" id="zTi-03-ynQ"/>
+                <outlet property="searchDisplayController" destination="n9Q-6D-EE4" id="4tF-W0-wqg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ysm-xY-KX7">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="104" width="320" height="464"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -24,10 +25,27 @@
                         <outlet property="delegate" destination="-1" id="qES-cS-2yu"/>
                     </connections>
                 </tableView>
+                <searchBar contentMode="redraw" text="" id="Oif-q8-G5T">
+                    <rect key="frame" x="0.0" y="60" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="YlZ-Ok-B2a"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="690" y="507"/>
+            <point key="canvasLocation" x="585" y="510"/>
         </view>
+        <searchDisplayController id="n9Q-6D-EE4">
+            <connections>
+                <outlet property="delegate" destination="-1" id="IOy-P7-5O7"/>
+                <outlet property="searchBar" destination="Oif-q8-G5T" id="u7u-0B-owF"/>
+                <outlet property="searchContentsController" destination="-1" id="GzV-e4-qj0"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="ga8-gO-si1"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="uQE-Og-zUv"/>
+            </connections>
+        </searchDisplayController>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

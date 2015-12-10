@@ -14,12 +14,14 @@
 @interface MainMenuViewController : UIViewController <UIAlertViewDelegate>
 {
     NSManagedObjectContext *context;
+    NSArray *reasons;
 }
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UILabel *resInfo;
 @property (weak, nonatomic) IBOutlet UILabel *resID;
 @property (weak, nonatomic) IBOutlet UILabel *resTime;
 @property (weak, nonatomic) IBOutlet UILabel *resRoom;
+@property (weak, nonatomic) Reservation* temp;
 
 - (IBAction)pressCancel:(id)sender;
 

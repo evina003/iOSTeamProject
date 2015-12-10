@@ -11,14 +11,20 @@
 #import "AppDelegate.h"
 #import "Room.h"
 #import "TimePickerViewController.h"
-@interface RoomPickerViewController :UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface RoomPickerViewController :UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 {
-    NSArray *rooms;
+    //NSArray *rooms;
     Room *selectedRoom;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *roomTableView;
-@property (nonatomic, retain) NSArray *rooms;
+@property (nonatomic, strong) NSArray *rooms;
 @property (nonatomic, retain) Room *selectedRoom;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *searResults;
+
+
+
 -(void) populateArray;
--(void)enableSearch;
+
 @end

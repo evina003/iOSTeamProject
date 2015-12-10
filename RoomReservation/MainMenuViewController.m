@@ -23,6 +23,10 @@
     if(appDelegate.current.rID == nil)
     {
         resID.text = @"No Reservation";
+        resInfo.text = @"";
+        //resID.text = @"";
+        resTime.text = @"";
+        resRoom.text = @"";
     }
     else
     {
@@ -95,34 +99,32 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    context = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *rq = [[NSFetchRequest alloc] init];
-    NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
-    [rq setEntity:desc];
-    [rq setResultType:NSDictionaryResultType];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"taken == %@", @"YES"];
-    [rq setPredicate:pred];
-    
-    NSError *err;
-    
-    NSArray *objects = [context executeFetchRequest:rq error:&err];
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    if([title isEqualToString:@"No"])
-    {
-        
-    }
-    else
-    {
-        if([title isEqualToString:@"Yes"] && [objects count] > 0)
+
+        if([title isEqualToString:@"Yes"])
         {
+            
+            context = [appDelegate managedObjectContext];
+            
+            NSFetchRequest *rq = [[NSFetchRequest alloc] init];
+            NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
+            [rq setEntity:desc];
+            [rq setResultType:NSDictionaryResultType];
+            NSPredicate *pred = [NSPredicate predicateWithFormat:@"rID == %@", appDelegate.current.rID];
+            [rq setPredicate:pred];
+            
+            NSError *err;
+            
+            NSArray *objects = [context executeFetchRequest:rq error:&err];
+            Reservation *temp = [objects objectAtIndex:0];
+            appDelegate.current.rID =nil;
             resInfo.text = @"";
-            [[objects objectAtIndex:0] setValue:@"0" forKey:@"rID"];
-            [[objects objectAtIndex:0] setValue:@"NO" forKey:@"taken"];
+            resID.text = @"No Reservation";
+            resTime.text = @"";
+            resRoom.text = @"";
+            
+            [appDelegate.managedObjectContext save: &err];
         }
-        
-    }
 }
 @end
 

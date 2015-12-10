@@ -8,13 +8,9 @@
 
 #import "RoomPickerViewController.h"
 
-@interface RoomPickerViewController ()
-
-@end
-
 @implementation RoomPickerViewController
 
-@synthesize rooms,roomTableView, selectedRoom;
+@synthesize rooms,roomTableView, selectedRoom, searResults;
 
 -(void)populateArray
 {
@@ -28,13 +24,15 @@
     NSError *err;
     
     rooms = [context executeFetchRequest:rq error:&err];
-    
+    //searResults = [context executeFetchRequest:rq error:&err];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.searResults = [[NSArray alloc] init];
     [self populateArray];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +57,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [rooms count];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.searResults count];
+    } else {
+        return [self.rooms count];
+    }
+   // return [rooms count]; //this was changed
 }
 
 #pragma mark -
@@ -81,8 +85,21 @@
     }
     
     
-    NSString *roomNumber = [NSString stringWithFormat:@"%@", [[rooms objectAtIndex:row] objectForKey:@"roomNum"]];
-    cell.textLabel.text = roomNumber;
+    //NSString *roomNumber = [NSString stringWithFormat:@"%@", [[searResults objectAtIndex:row] objectForKey:@"roomNum"]];
+    //cell.textLabel.text = roomNumber;
+    NSString *roomNumber;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        roomNumber = [NSString stringWithFormat:@"%@", [[searResults objectAtIndex:row] objectForKey:@"roomNum"]];
+        cell.textLabel.text = roomNumber;
+    }
+    else
+    {
+        roomNumber = [NSString stringWithFormat:@"%@", [[rooms objectAtIndex:row] objectForKey:@"roomNum"]];
+        cell.textLabel.text = roomNumber;
+    }
+    
     return cell;
 }
 
@@ -101,6 +118,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     nextController.rNum = [[rooms objectAtIndex:row] objectForKey:@"roomNum"];
     [self.navigationController pushViewController:nextController
                                          animated:YES];
+}
+/*************SEARCH********/
+-(void) filterContentForSearchText:(NSString *) searchText scope: (NSString *)scope
+{
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"roomNum beginswith[c] %@", searchText];
+    self.searResults = [rooms filteredArrayUsingPredicate:pred];
+}
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return  YES;
 }
 
 @end

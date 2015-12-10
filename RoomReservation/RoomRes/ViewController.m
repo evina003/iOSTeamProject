@@ -19,12 +19,12 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
         
-    Users *giselle = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
+    Users *giselle1 = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     Users *a = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     Users *manny = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     
-    giselle.username  = @"gpach002";
-    giselle.password = @"iLoveJessicaJones";
+    giselle1.username  = @"gpach002";
+    giselle1.password = @"iLoveJessicaJones";
    
     a.username  = @"a";
     a.password = @"a";
@@ -58,7 +58,7 @@
         NSLog(@"FAILURE");
     }
     
-    NSLog(@"%@", giselle);
+    NSLog(@"%@", giselle1);
     NSLog(@"object saved");
     
     NSLog(@"%@", manny);
