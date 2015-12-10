@@ -17,7 +17,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
-    
     if(![appDelegate coreDataHasEntriesForEntityName:@"Users"])
     {
         Users *giselle1 = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
@@ -72,22 +71,30 @@
 
     }
 }
-/*
+
 -(void) viewWillAppear:(BOOL)animated
 {
  
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
-    NSFetchRequest *rq = [[NSFetchRequest alloc] init];
-    NSEntityDescription *desc = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
-    [rq setEntity:desc];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"username == %@", appDelegate.current.username];
-    [rq setPredicate:pred];
-    NSError *err;
+    NSString *filePath = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        
+        NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];
+        NSFetchRequest *rq = [[NSFetchRequest alloc] init];
+        NSEntityDescription *desc = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
+        [rq setEntity:desc];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"username == %@", [array objectAtIndex:0]];
+        [rq setPredicate:pred];
+        NSError *err;
+        
+        NSArray *objects = [context executeFetchRequest:rq error:&err];
+        
+        appDelegate.current = [objects objectAtIndex:0];
+    }
     
-    NSArray *objects = [context executeFetchRequest:rq error:&err];
-    
-
+    if(appDelegate.current != nil && appDelegate.current.touchID > [NSNumber numberWithInt:0]){
+   
     LAContext *myContext = [[LAContext alloc] init];
     NSError *authError = nil;
     NSString *myLocalizedReasonString = @"Touch ID Test to show Touch ID working in a custom app";
@@ -112,7 +119,6 @@
                                                                                   cancelButtonTitle:@"OK"
                                                                                   otherButtonTitles:nil, nil];
                                         [alertView show];
-                                        // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
                                     });
                                 }
                             }];
@@ -129,8 +135,9 @@
             // Rather than show a UIAlert here, use the error to determine if you should push to a keypad for PIN entry.
         });
     }
+    }
 }
-*/
+
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
     if (textField == username) {
@@ -160,7 +167,8 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
-    
+    UIAlertView *alert;
+
     
     NSFetchRequest *rq = [[NSFetchRequest alloc] init];
     NSEntityDescription *desc = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
@@ -175,25 +183,41 @@
         if([currUser.password isEqualToString: password.text]) {
             appDelegate.current = currUser;
             [self performSegueWithIdentifier:@"Main" sender:self];
-            /*NSString *filePath = [self dataFilePath];
-            if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-                NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];*/
+            NSMutableArray *array = [[NSMutableArray alloc] init];
+            [array addObject: appDelegate.current.username];
+            [array writeToFile:[self dataFilePath] atomically:YES];
+            alert = [[UIAlertView alloc] initWithTitle:@"Touch ID" message:@"Would you like to use Touch ID?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+            [alert show];
         } else{
-            UIAlertView *alert;
             alert = [[UIAlertView alloc] initWithTitle:@"Invalid Login" message:@"Wrong Username or Password, Please Try Again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             password.text = @"";
         }
     } else{
-        UIAlertView *alert;
         alert = [[UIAlertView alloc] initWithTitle:@"Invalid Login" message:@"Wrong Username or Password, Please Try Again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         username.text = @"";
         password.text = @"";
-        }
-    
     }
+    
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+
+    
+    if([title isEqualToString:@"Yes"])
+    {
+        appDelegate.current.touchID = [NSNumber numberWithInt:1];
+    }
+    else
+    {
+        appDelegate.current.touchID = [NSNumber numberWithInt:0];
+    }
+    
+}
 
 - (NSString *)dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(
@@ -201,7 +225,6 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     return [documentsDirectory stringByAppendingPathComponent:kFilename];
 }
-
 
 
 - (void)applicationWillResignActive:(NSNotification *)notification {
