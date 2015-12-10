@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Users.h"
+#import "Reservation.h"
 
 @interface MainMenuViewController : UIViewController <UIAlertViewDelegate>
 {
@@ -14,6 +17,9 @@
 }
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UILabel *resInfo;
+@property (weak, nonatomic) IBOutlet UILabel *resID;
+@property (weak, nonatomic) IBOutlet UILabel *resTime;
+@property (weak, nonatomic) IBOutlet UILabel *resRoom;
 
 - (IBAction)pressCancel:(id)sender;
 

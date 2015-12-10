@@ -46,8 +46,6 @@
             reserv.taken = @"NO";
             reserv.rID = @"0";
             reserv.time = [NSString stringWithFormat:@"%d:00 - %d:59",j + i + 1, j + i + 2];
-            NSLog(reserv.time);
-            NSLog(reserv.roomNum);
         }
     }
     
@@ -147,26 +145,18 @@
     NSFetchRequest *rq = [[NSFetchRequest alloc] init];
     NSEntityDescription *desc = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
     [rq setEntity:desc];
-    [rq setResultType:NSDictionaryResultType];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"username == %@", username.text];
     [rq setPredicate:pred];
-    [rq setPropertiesToFetch:@[@"password"]];
     NSError *err;
     
     NSArray *objects = [context executeFetchRequest:rq error:&err];
     if (objects.count > 0) {
-        
-        if([[[objects objectAtIndex:0] objectForKey: @"password" ] isEqualToString: password.text]) {
+        Users *currUser = [objects objectAtIndex:0];
+        if([currUser.password isEqualToString: password.text]) {
             NSLog(@"Login Successful");
-        
-        //load new screen
             
+            appDelegate.current = currUser;
             [self performSegueWithIdentifier:@"Main" sender:self];
-         /*
-            UIViewController *main = [self.storyboard instantiateViewControllerWithIdentifier:@"Main"];
-            [self.navigationController pushViewController:main animated:YES];
-        */
-        
         } else
             NSLog(@"FAILURE");
     }

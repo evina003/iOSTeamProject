@@ -8,39 +8,52 @@
 
 #import "MainMenuViewController.h"
 #import <CoreData/CoreData.h>
-#import "AppDelegate.h"
 
 @implementation MainMenuViewController
 
-@synthesize cancelButton, resInfo;
+@synthesize cancelButton, resInfo, resID, resRoom, resTime;
+
+-(void)LoadData
+{
+    // Do any additional setup after loading the view.
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    
+    if(appDelegate.current.rID == nil)
+    {
+        resID.text = @"No Reservation";
+    }
+    else
+    {
+        context = [appDelegate managedObjectContext];
+        
+        NSFetchRequest *rq = [[NSFetchRequest alloc] init];
+        NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
+        [rq setEntity:desc];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"rID == %@", appDelegate.current.rID];
+        [rq setPredicate:pred];
+        
+        NSError *err;
+        
+        NSArray *objects = [context executeFetchRequest:rq error:&err];
+        Reservation *temp = [objects objectAtIndex:0];
+        resID.text = appDelegate.current.rID;
+        resInfo.text = temp.reason;
+        resRoom.text = temp.roomNum;
+        resTime.text = temp.time;
+    }
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self LoadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    context = [appDelegate managedObjectContext];
-    
-    NSManagedObject *room = [NSEntityDescription insertNewObjectForEntityForName: @"Reservation" inManagedObjectContext: context];
-    
-    NSLog(@"hello");
-    
-    
-    [room setValue:@"1234" forKey:@"rID"];
-    [room setValue:@"536A" forKey:@"roomNum"];
-    
-    [room setValue:@"YES" forKey:@"taken"];
-    [room setValue:@"2:00-$:59" forKey:@"time"];
-    
-    NSError *err = nil;
-    
-    if([context save:&err]){
-        NSLog(@"Yay?");
-    }
-    else{
-        NSLog(@"FAILURE");
-    }
-    
+    [self LoadData];
 }
 
 - (void)didReceiveMemoryWarning {

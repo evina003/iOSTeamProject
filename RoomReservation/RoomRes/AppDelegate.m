@@ -14,6 +14,7 @@
 
 @implementation AppDelegate
 
+@synthesize current;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

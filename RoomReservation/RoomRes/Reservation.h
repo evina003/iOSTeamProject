@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSString * roomNum;
 @property (nonatomic, retain) NSString * taken;
 @property (nonatomic, retain) NSString * time;
+@property (nonatomic,retain)  NSString * reason;
 
 @end

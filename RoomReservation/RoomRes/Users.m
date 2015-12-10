@@ -16,6 +16,5 @@
 @dynamic rID;
 @dynamic touchID;
 @dynamic username;
-@dynamic room;
 
 @end

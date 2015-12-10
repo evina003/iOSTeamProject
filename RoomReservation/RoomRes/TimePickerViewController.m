@@ -14,7 +14,7 @@
 
 @implementation TimePickerViewController
 
-@synthesize rNum, availTimes;
+@synthesize rNum, availTimes,selectedRes;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +35,6 @@
     NSFetchRequest *rq = [[NSFetchRequest alloc] init];
     NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
     [rq setEntity:desc];
-    [rq setResultType: NSDictionaryResultType];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"roomNum == %@", rNum];
     [rq setPredicate:pred];
     NSError *err;
@@ -81,9 +80,8 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:SectionsTableIdentifier];
     }
-    
-    NSString *time = [NSString stringWithFormat:@"%@", [[availTimes objectAtIndex:row] objectForKey:@"time"]];
-    cell.textLabel.text = time;
+    Reservation *temp = [availTimes objectAtIndex:row];
+    cell.textLabel.text = temp.time;
     return cell;
 }
 
@@ -99,6 +97,8 @@ titleForHeaderInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
     ReasonPickerViewController *nextController = [[ReasonPickerViewController alloc] init];
+    selectedRes = [availTimes objectAtIndex:row];
+    nextController.resChoice = selectedRes;
     [self.navigationController pushViewController:nextController
                                          animated:YES];
 }

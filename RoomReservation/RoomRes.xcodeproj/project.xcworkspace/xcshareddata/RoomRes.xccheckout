@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F51526D3-ADF5-4EF5-BF76-E2EA0436E4C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RoomRes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D38E1832DDA80077B0FA495669A71432382B1307</key>
+		<string>https://github.com/wgome015/iOSTeamProject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RoomReservation/RoomRes.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D38E1832DDA80077B0FA495669A71432382B1307</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wgome015/iOSTeamProject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D38E1832DDA80077B0FA495669A71432382B1307</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D38E1832DDA80077B0FA495669A71432382B1307</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSTeamProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>

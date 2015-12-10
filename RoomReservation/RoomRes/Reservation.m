@@ -15,5 +15,6 @@
 @dynamic roomNum;
 @dynamic taken;
 @dynamic time;
+@dynamic reason;
 
 @end

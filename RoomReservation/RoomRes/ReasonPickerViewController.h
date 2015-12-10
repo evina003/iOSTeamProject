@@ -12,6 +12,13 @@
 #import "Room.h"
 #import "TimePickerViewController.h"
 
-@interface ReasonPickerViewController : UIViewController
-
+@interface ReasonPickerViewController : UIViewController<UIAlertViewDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSArray* reasons;
+    Reservation *resChoice;
+}
+@property (weak, nonatomic) IBOutlet UIPickerView *reasonPicker;
+@property (nonatomic, retain) Reservation *resChoice;
+@property (weak, nonatomic) IBOutlet UIButton *submit;
+- (IBAction)submitReservation:(id)sender;
 @end
