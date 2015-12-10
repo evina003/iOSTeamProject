@@ -12,6 +12,13 @@
 
 @synthesize username, password, passlabel, userlabel;
 
+
+/*
+ This method loads coreData with:
+ two significant users
+ Rooms
+ and times
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -155,6 +162,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ 
+ This method makes sure that the password and username are correct for a user
+ 
+*/
 
 -(IBAction)pressLogin: (id)sender
 {
