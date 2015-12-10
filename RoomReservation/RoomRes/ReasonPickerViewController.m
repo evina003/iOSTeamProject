@@ -29,16 +29,35 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
+    AppDelegate *adel = [[UIApplication sharedApplication] delegate ];
+
+    UIAlertView *alert;
+
     if([title isEqualToString:@"Yes"])
     {
-        resChoice.reason = [reasons objectAtIndex:[reasonPicker selectedRowInComponent:0]];
-        AppDelegate *adel = [[UIApplication sharedApplication] delegate ];
-        resChoice.rID = [NSString stringWithFormat:@"%d%d%d" ,rand(),rand(),rand()];
-        adel.current.rID = resChoice.rID;
-        NSError *err;
-        [adel.managedObjectContext save: &err];
+        if(adel.current.rID == nil)
+        {
+            resChoice.reason = [reasons objectAtIndex:[reasonPicker selectedRowInComponent:0]];
+            resChoice.rID = [NSString stringWithFormat:@"%d%d%d" ,rand(),rand(),rand()];
+            resChoice.taken = @"YES";
+            adel.current.rID = resChoice.rID;
+            NSError *err;
+            if([adel.managedObjectContext save: &err])
+            {
+                alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Appointment has been made." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+            else{
+                alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Something went wrong submitting Reservation. Please Try Again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+        }
+        else{
+            alert = [[UIAlertView alloc] initWithTitle:@"Exception" message:@"You can only have one Reservation at a time. Please Cancel and Try Again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
     }
+ 
 }
 /*
 #pragma mark - Navigation

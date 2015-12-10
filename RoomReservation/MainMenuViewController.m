@@ -24,7 +24,6 @@
     {
         resID.text = @"No Reservation";
         resInfo.text = @"";
-        //resID.text = @"";
         resTime.text = @"";
         resRoom.text = @"";
     }
@@ -75,8 +74,6 @@
 }
  
  */
- 
- 
 
 
 - (IBAction)pressCancel:(id)sender {
@@ -109,7 +106,6 @@
             NSFetchRequest *rq = [[NSFetchRequest alloc] init];
             NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
             [rq setEntity:desc];
-            [rq setResultType:NSDictionaryResultType];
             NSPredicate *pred = [NSPredicate predicateWithFormat:@"rID == %@", appDelegate.current.rID];
             [rq setPredicate:pred];
             
@@ -117,6 +113,9 @@
             
             NSArray *objects = [context executeFetchRequest:rq error:&err];
             Reservation *temp = [objects objectAtIndex:0];
+            temp.taken = @"NO";
+            temp.rID = @"0";
+            temp.reason = @"";
             appDelegate.current.rID =nil;
             resInfo.text = @"";
             resID.text = @"No Reservation";

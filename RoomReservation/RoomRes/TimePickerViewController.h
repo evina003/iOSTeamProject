@@ -22,6 +22,7 @@
 @property(nonatomic, retain)NSString *rNum;
 @property(nonatomic, retain)NSArray *availTimes;
 @property(nonatomic, retain)Reservation *selectedRes;
+@property (weak, nonatomic) IBOutlet UITableView *tView;
 
 //show times available for room number chosen.
 - (void)populateData;

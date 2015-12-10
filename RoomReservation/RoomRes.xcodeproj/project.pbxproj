@@ -21,7 +21,7 @@
 		C4CEF7A31C14B4A800376760 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A21C14B4A800376760 /* main.m */; };
 		C4CEF7A61C14B4A800376760 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A51C14B4A800376760 /* AppDelegate.m */; };
 		C4CEF7A91C14B4A900376760 /* RoomRes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7A71C14B4A900376760 /* RoomRes.xcdatamodeld */; };
-		C4CEF7AC1C14B4A900376760 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7AB1C14B4A900376760 /* ViewController.m */; };
+		C4CEF7AC1C14B4A900376760 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CEF7AB1C14B4A900376760 /* LoginViewController.m */; };
 		C4CEF7AF1C14B4A900376760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CEF7AD1C14B4A900376760 /* Main.storyboard */; };
 		C4CEF7B11C14B4A900376760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CEF7B01C14B4A900376760 /* Images.xcassets */; };
 		C4CEF7B41C14B4A900376760 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CEF7B21C14B4A900376760 /* LaunchScreen.xib */; };
@@ -65,8 +65,8 @@
 		C4CEF7A41C14B4A800376760 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4CEF7A51C14B4A800376760 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C4CEF7A81C14B4A900376760 /* RoomRes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoomRes.xcdatamodel; sourceTree = "<group>"; };
-		C4CEF7AA1C14B4A900376760 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C4CEF7AB1C14B4A900376760 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C4CEF7AA1C14B4A900376760 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C4CEF7AB1C14B4A900376760 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C4CEF7AE1C14B4A900376760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4CEF7B01C14B4A900376760 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C4CEF7B31C14B4A900376760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				5AEF495D1C18CBE1003F0F73 /* Emmanuel's Scripts */,
 				C4CEF7A41C14B4A800376760 /* AppDelegate.h */,
 				C4CEF7A51C14B4A800376760 /* AppDelegate.m */,
-				C4CEF7AA1C14B4A900376760 /* ViewController.h */,
-				C4CEF7AB1C14B4A900376760 /* ViewController.m */,
+				C4CEF7AA1C14B4A900376760 /* LoginViewController.h */,
+				C4CEF7AB1C14B4A900376760 /* LoginViewController.m */,
 				C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */,
 				C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */,
 				C4CEF7AD1C14B4A900376760 /* Main.storyboard */,
@@ -302,7 +302,7 @@
 				C4CEF7A31C14B4A800376760 /* main.m in Sources */,
 				5AEF49611C18CD62003F0F73 /* TimePickerViewController.m in Sources */,
 				5A53D6981C18D055008EA182 /* RoomPickerViewController.m in Sources */,
-				C4CEF7AC1C14B4A900376760 /* ViewController.m in Sources */,
+				C4CEF7AC1C14B4A900376760 /* LoginViewController.m in Sources */,
 				5A53D69D1C18D4B9008EA182 /* Reservation.m in Sources */,
 				C43C0CC51C18A94800BC3265 /* MainMenuViewController.m in Sources */,
 				C4CEF7A91C14B4A900376760 /* RoomRes.xcdatamodeld in Sources */,

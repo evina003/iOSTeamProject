@@ -14,12 +14,18 @@
 
 @implementation TimePickerViewController
 
-@synthesize rNum, availTimes,selectedRes;
+@synthesize rNum, availTimes,selectedRes, tView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self populateData];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self populateData];
+    [tView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +41,7 @@
     NSFetchRequest *rq = [[NSFetchRequest alloc] init];
     NSEntityDescription *desc = [NSEntityDescription entityForName:@"Reservation" inManagedObjectContext:context];
     [rq setEntity:desc];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"roomNum == %@", rNum];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"roomNum == %@ && taken == %@", rNum, @"NO"];
     [rq setPredicate:pred];
     NSError *err;
     

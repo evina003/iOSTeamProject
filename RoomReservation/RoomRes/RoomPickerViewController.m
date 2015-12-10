@@ -10,7 +10,7 @@
 
 @implementation RoomPickerViewController
 
-@synthesize rooms,roomTableView, selectedRoom, searResults;
+@synthesize rooms,roomTableView, selectedRoom, searResults, searchBar, searchDisplayController;
 
 -(void)populateArray
 {
@@ -25,7 +25,12 @@
     
     rooms = [context executeFetchRequest:rq error:&err];
     //searResults = [context executeFetchRequest:rq error:&err];
-
+    
+    searchBar.frame = CGRectMake(0 , self.navigationController.navigationBar.frame.origin.y + searchBar.frame.size.height, 320, 44);
+    searchBar.delegate = self;
+    searchBar.showsCancelButton = TRUE;
+    [searchBar setHidden:NO];
+    [searchBar becomeFirstResponder];
 }
 
 - (void)viewDidLoad {
@@ -131,5 +136,4 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return  YES;
 }
-
 @end

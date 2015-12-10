@@ -110,6 +110,22 @@
     return _managedObjectContext;
 }
 
+- (BOOL)coreDataHasEntriesForEntityName:(NSString *)entityName {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init] ;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    [request setFetchLimit:1];
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (!results) {
+        abort();
+    }
+    if ([results count] == 0) {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {

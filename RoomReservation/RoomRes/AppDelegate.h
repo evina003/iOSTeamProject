@@ -23,7 +23,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
+- (BOOL)coreDataHasEntriesForEntityName:(NSString *)entityName;
 
 @end
 

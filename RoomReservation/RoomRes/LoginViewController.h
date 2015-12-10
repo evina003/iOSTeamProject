@@ -13,7 +13,9 @@
 #import "Room.h"
 #import "Reservation.h"
 #import "Users.h"
-@interface ViewController : UIViewController
+#define kFilename        @"data.plist"
+
+@interface LoginViewController : UIViewController <UIAlertViewDelegate>
 {
     NSManagedObjectContext *context;
 }
@@ -28,7 +30,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *passlabel;
 
 -(IBAction)pressLogin: (id)sender;
-
+- (NSString *)dataFilePath;
 @end
 
 //moe'z express'

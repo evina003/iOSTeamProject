@@ -21,8 +21,10 @@
 @property (nonatomic, strong) NSArray *rooms;
 @property (nonatomic, retain) Room *selectedRoom;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @property (strong, nonatomic) NSArray *searResults;
 
+@property (strong, nonatomic) IBOutlet UISearchDisplayController *searchDisplayController;
 
 
 -(void) populateArray;
