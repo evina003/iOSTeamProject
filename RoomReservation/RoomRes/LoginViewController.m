@@ -113,12 +113,12 @@
                                 else
                                 {
                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                            message:error.description
-                                                                                           delegate:self
-                                                                                  cancelButtonTitle:@"OK"
-                                                                                  otherButtonTitles:nil, nil];
-                                        [alertView show];
+//                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                                                            message:error.description
+//                                                                                           delegate:self
+//                                                                                  cancelButtonTitle:@"OK"
+//                                                                                  otherButtonTitles:nil, nil];
+//                                        [alertView show];
                                     });
                                 }
                             }];
