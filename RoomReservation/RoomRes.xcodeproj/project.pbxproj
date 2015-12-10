@@ -55,8 +55,8 @@
 		5AEF49631C18CDC2003F0F73 /* ReasonPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReasonPickerViewController.h; sourceTree = "<group>"; };
 		5AEF49641C18CDC2003F0F73 /* ReasonPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReasonPickerViewController.m; sourceTree = "<group>"; };
 		5AEF49651C18CDC2003F0F73 /* ReasonPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReasonPickerViewController.xib; sourceTree = "<group>"; };
-		C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ../MainMenuViewController.h; sourceTree = "<group>"; };
+		C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = ../MainMenuViewController.m; sourceTree = "<group>"; };
 		C43C0CC61C18C0F500BC3265 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		C43C0CC71C18C0F500BC3265 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		C4CEF79D1C14B4A800376760 /* RoomRes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomRes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +106,7 @@
 				5A53D69C1C18D4B9008EA182 /* Reservation.m */,
 			);
 			name = Entities;
+			path = RoomRes;
 			sourceTree = "<group>";
 		};
 		5AEF495D1C18CBE1003F0F73 /* Emmanuel's Scripts */ = {
@@ -129,12 +130,11 @@
 		C4CEF7941C14B4A800376760 = {
 			isa = PBXGroup;
 			children = (
-				C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */,
-				C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */,
-				C4CEF7C91C14D49500376760 /* CoreData.framework */,
+				5A53D69A1C18D3B6008EA182 /* Entities */,
 				C4CEF79F1C14B4A800376760 /* RoomRes */,
 				C4CEF7BC1C14B4A900376760 /* RoomResTests */,
 				C4CEF79E1C14B4A800376760 /* Products */,
+				C4CEF7C91C14D49500376760 /* CoreData.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,12 +150,13 @@
 		C4CEF79F1C14B4A800376760 /* RoomRes */ = {
 			isa = PBXGroup;
 			children = (
-				5A53D69A1C18D3B6008EA182 /* Entities */,
 				5AEF495D1C18CBE1003F0F73 /* Emmanuel's Scripts */,
 				C4CEF7A41C14B4A800376760 /* AppDelegate.h */,
 				C4CEF7A51C14B4A800376760 /* AppDelegate.m */,
 				C4CEF7AA1C14B4A900376760 /* ViewController.h */,
 				C4CEF7AB1C14B4A900376760 /* ViewController.m */,
+				C43C0CC31C18A94800BC3265 /* MainMenuViewController.h */,
+				C43C0CC41C18A94800BC3265 /* MainMenuViewController.m */,
 				C4CEF7AD1C14B4A900376760 /* Main.storyboard */,
 				C4CEF7B01C14B4A900376760 /* Images.xcassets */,
 				C4CEF7B21C14B4A900376760 /* LaunchScreen.xib */,

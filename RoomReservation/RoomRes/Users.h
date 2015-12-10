@@ -14,7 +14,7 @@
 @interface Users : NSManagedObject
 
 @property (nonatomic, retain) NSString * password;
-@property (nonatomic, retain) NSNumber * rID;
+@property (nonatomic, retain) NSString * rID;
 @property (nonatomic, retain) NSNumber * touchID;
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) Reservation *room;

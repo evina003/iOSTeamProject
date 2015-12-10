@@ -7,11 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "Room.h"
+#import "Reservation.h"
+#import "ReasonPickerViewController.h"
+@interface TimePickerViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+{
+    NSString *rNum;
+    NSArray *availTimes;
+    Reservation *selectedRes;
+}
 
-@interface TimePickerViewController : UIViewController
-
+@property(nonatomic, retain)NSString *rNum;
+@property(nonatomic, retain)NSArray *availTimes;
+@property(nonatomic, retain)Reservation *selectedRes;
 
 //show times available for room number chosen.
-
+- (void)populateData;
 
 @end

@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Room.h"
+#import "TimePickerViewController.h"
 @interface RoomPickerViewController :UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *rooms;

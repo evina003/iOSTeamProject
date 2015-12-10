@@ -11,6 +11,8 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "AppDelegate.h"
 #import "Room.h"
+#import "Reservation.h"
+#import "Users.h"
 @interface ViewController : UIViewController
 {
     NSManagedObjectContext *context;

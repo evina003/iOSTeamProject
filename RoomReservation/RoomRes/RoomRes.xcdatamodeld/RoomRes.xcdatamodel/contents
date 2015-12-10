@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Reservation" representedClassName="Reservation" syncable="YES">
+        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="roomNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taken" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,7 +20,7 @@
         <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Reservation" positionX="-387" positionY="149" width="128" height="105"/>
+        <element name="Reservation" positionX="-387" positionY="149" width="128" height="120"/>
         <element name="Room" positionX="-119" positionY="153" width="128" height="88"/>
         <element name="Users" positionX="-189" positionY="-9" width="128" height="120"/>
     </elements>

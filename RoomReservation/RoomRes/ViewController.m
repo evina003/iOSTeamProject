@@ -19,17 +19,18 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     context = [appDelegate managedObjectContext];
         
-    NSManagedObject *giselle = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
+    Users *giselle = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
+    Users *a = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
+    Users *manny = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
     
-    NSManagedObject *manny = [NSEntityDescription insertNewObjectForEntityForName: @"Users" inManagedObjectContext: context];
-    
-    [giselle setValue:@"gpach002" forKey:@"username"];
-    [giselle setValue:@"iLoveJessicaJones" forKey:@"password"];
-    
-    [manny setValue:@"evinas003" forKey:@"username"];
-    [manny setValue:@"iLoveSM" forKey:@"password"];
-    
-    
+    giselle.username  = @"gpach002";
+    giselle.password = @"iLoveJessicaJones";
+   
+    a.username  = @"a";
+    a.password = @"a";
+
+    manny.username = @"evinas003" ;
+    manny.password = @"iLoveSM";
     
     for(int i = 0 ; i < 10; i++)
     {
@@ -37,8 +38,18 @@
         
         x.roomNum = [NSString stringWithFormat:@"%d", i*5];
         x.cap = [NSNumber numberWithInt: (i != 0)? 2 : i * 2];
+        for (int j = 0; j < 3; j++) {
+            
+            Reservation *reserv= [NSEntityDescription insertNewObjectForEntityForName: @"Reservation" inManagedObjectContext: context];
+            
+            reserv.roomNum = x.roomNum;
+            reserv.taken = @"NO";
+            reserv.rID = @"0";
+            reserv.time = [NSString stringWithFormat:@"%d:00 - %d:59",j + i + 1, j + i + 2];
+            NSLog(reserv.time);
+            NSLog(reserv.roomNum);
+        }
     }
-    
     
     NSError *err = nil;
     

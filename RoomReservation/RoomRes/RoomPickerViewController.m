@@ -16,12 +16,6 @@
 
 @synthesize rooms,roomTableView, selectedRoom;
 
-
--(void)enableSearch
-{
-}
-
-
 -(void)populateArray
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -31,7 +25,6 @@
     NSEntityDescription *desc = [NSEntityDescription entityForName:@"Room" inManagedObjectContext:context];
     [rq setEntity:desc];
     [rq setResultType: NSDictionaryResultType];
-    [rq setPropertiesToFetch:@[@"roomNum"]];
     NSError *err;
     
     rooms = [context executeFetchRequest:rq error:&err];
@@ -42,14 +35,6 @@
     [super viewDidLoad];
     
     [self populateArray];
-    
-    UIBarButtonItem *newButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"Search"
-                                  style:UIBarButtonItemStyleDone
-                                  target:self
-                                  action:@selector(enableSearch)];
-    
-    self.navigationItem.rightBarButtonItem = newButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,8 +80,8 @@
                  reuseIdentifier:SectionsTableIdentifier];
     }
     
-    Room *room = [rooms objectAtIndex:row];
-    NSString *roomNumber = [NSString stringWithFormat:@"%@", room.roomNum];
+    
+    NSString *roomNumber = [NSString stringWithFormat:@"%@", [[rooms objectAtIndex:row] objectForKey:@"roomNum"]];
     cell.textLabel.text = roomNumber;
     return cell;
 }
@@ -112,9 +97,10 @@ titleForHeaderInSection:(NSInteger)section {
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
-    selectedRoom = [rooms objectAtIndex:row];
-    
+    TimePickerViewController *nextController = [[TimePickerViewController alloc] init];
+    nextController.rNum = [[rooms objectAtIndex:row] objectForKey:@"roomNum"];
+    [self.navigationController pushViewController:nextController
+                                         animated:YES];
 }
-
 
 @end

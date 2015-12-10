@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "Room.h"
+#import "TimePickerViewController.h"
 
 @interface ReasonPickerViewController : UIViewController
 

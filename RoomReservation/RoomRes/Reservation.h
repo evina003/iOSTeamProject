@@ -12,9 +12,9 @@
 
 @interface Reservation : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * rID;
+@property (nonatomic, retain) NSString * rID;
 @property (nonatomic, retain) NSString * roomNum;
-@property (nonatomic, retain) NSNumber * taken;
+@property (nonatomic, retain) NSString * taken;
 @property (nonatomic, retain) NSString * time;
 
 @end
